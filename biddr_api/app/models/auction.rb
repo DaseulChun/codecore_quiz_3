@@ -4,6 +4,6 @@ class Auction < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: {message: "must exist"}, length: { minimum: 10 }
-  validates :expiration_date, presence: true
+  validates :ends_at, presence: true
   validates :reserve_price, numericality: { greater_than: 0 }
 end

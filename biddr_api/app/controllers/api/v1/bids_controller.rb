@@ -7,10 +7,10 @@ class Api::V1::BidsController < Api::ApplicationController
     @bid.user = current_user
     @bid.auction = @auction
     if @bid.save
-      render json: { id: bid.id }
+      render json: { id: @bid.id }
     else
       render(
-        json: { errors: bid.errors }, 
+        json: { errors: @bid.errors }, 
         status: 422 # Unprocessable Entity
       )
     end
