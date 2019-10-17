@@ -7,7 +7,7 @@ class Api::V1::BidsController < Api::ApplicationController
     @bid.user = current_user
     @bid.auction = @auction
     if @bid.save
-      render json: { id: @bid.id }
+      render json: { id: @auction.id }
     else
       render(
         json: { errors: @bid.errors }, 
